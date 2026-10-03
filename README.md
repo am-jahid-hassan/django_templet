@@ -53,6 +53,7 @@ A production-ready Django REST API backend with authentication, OTP verification
 │   ├── urls.py
 │   ├── urls_v1.py
 │   └── celery.py
+├── tests/                # Automated pytest suite (unit, integration, api, workflows)
 ├── developer_guide/      # Response, Services, Utilities reference docs
 ├── docker/               # Dockerfile, entrypoint.sh
 ├── docker-compose.local.yml
@@ -262,7 +263,20 @@ Internal reference documentation is in [`developer_guide/`](developer_guide/):
 
 ## Running Tests
 
-No automated test suite yet. Manual endpoint test results are recorded in [`developers_files/`](developers_files/).
+Run the automated test suite using `pytest`:
+
+```bash
+pytest
+```
+
+To run a specific test suite:
+
+```bash
+pytest tests/unit/
+pytest tests/integration/
+pytest tests/api/
+pytest tests/workflows/
+```
 
 ---
 
